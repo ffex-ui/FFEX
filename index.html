@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <input type="text">
+    <p></p>
+    <button>提交</button>
+</body>
+
+</html>
+<script>
+   Object.prototype.test = 'myTest'
+    let obj = {
+        a: 'b',
+        c: 'd'
+    }
+    Object.defineProperty(obj,'non-em',{
+        enumerable: false, //enumerable为false时Object.getOwnPropertyNames也能遍历到
+        value: 'deejay'
+    })
+    let keys = Object.getOwnPropertyNames(obj)
+    console.log(keys)  //["a", "c", "non-em"]
+</script>
